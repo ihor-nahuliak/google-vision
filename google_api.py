@@ -22,14 +22,14 @@ def detect_face(url, max_results=4):
     #image = types.Image(content=content)
     request = {'image': {'source': {'image_uri': '{}'.format(url)},},}
 
-    return client.annotate_image(request)
+    return client.annotate_image(request).face_annotations
 
 
 
 #with open(input_filename, 'rb') as image:
 url='https://farm4.staticflickr.com/3296/2760862365_45e011e538_z.jpg?zz%5Cx3d1'
 face = detect_face(url, max_results)
-print(face)
-
-
-
+s_face = str(face)
+f = open('test.json', 'w')
+f.write(s_face)
+f.close()
