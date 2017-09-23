@@ -4,7 +4,7 @@ from google.cloud.vision import types, client
 from oauth2client.client import GoogleCredentials
 import json
 
-input_filename = '/home/slippy/Dokumenty/sw.jpg'
+# input_filename = '/home/slippy/Dokumenty/sw.jpg'
 max_results=1
 
 def detect_face(url, max_results=4):

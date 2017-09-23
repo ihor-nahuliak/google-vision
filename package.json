@@ -1,0 +1,14 @@
+{
+  "name": "google-vision",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:yacotaco/google-vision.git",
+  "scripts": {
+    "start": "GOOGLE_APPLICATION_CREDENTIALS=googlecred.json python3 ./google_api.py",
+    "serve": "python3 ./server.py",
+    "watch": "nodemon --exec 'yarn serve' --watch './server.py'"
+  },
+  "dependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
