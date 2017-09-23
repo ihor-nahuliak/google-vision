@@ -5,7 +5,7 @@
   "repository": "git@github.com:yacotaco/google-vision.git",
   "scripts": {
     "start": "GOOGLE_APPLICATION_CREDENTIALS=googlecred.json python3 ./google_api.py",
-    "serve": "FLASK_APP=server.py UPLOAD_FOLDER=/home/troy/Pictures/test flask run",
+    "serve": "FLASK_APP=server.py IMAGE_LOCATION=/home/troy/Pictures/test/img.jpg flask run",
     "watch": "nodemon --exec 'yarn serve' --watch './server.py'"
   },
   "dependencies": {
