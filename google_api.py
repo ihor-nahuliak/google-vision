@@ -4,8 +4,7 @@ from google.cloud.vision import types, client
 from oauth2client.client import GoogleCredentials
 import json
 
-# input_filename = '/home/slippy/Dokumenty/sw.jpg'
-max_results=1
+from processjson import Processor
 
 def detect_face(url, max_results=4):
     """Uses the Vision API to detect faces in the given file.
@@ -22,14 +21,24 @@ def detect_face(url, max_results=4):
     #image = types.Image(content=content)
     request = {'image': {'source': {'image_uri': '{}'.format(url)},},}
 
-    return client.annotate_image(request)
+    return client.annotate_image(request).face_annotations
 
 
-
-#with open(input_filename, 'rb') as image:
 url='https://farm4.staticflickr.com/3296/2760862365_45e011e538_z.jpg?zz%5Cx3d1'
+max_results=1
+
 face = detect_face(url, max_results)
-print(face)
+s_face = str(face)
+f = open('test.txt', 'w')
+f.write(s_face)
+f.close()
 
 
-
+# p = Processor()
+# print(p.get_joy_value())
+# print(p.get_sorrow_value())
+# print(p.get_anger_value())
+# print(p.get_surprise_value())
+# print(p.get_underexposed_value())
+# print(p.get_blurred_value())
+# print(p.get_headwear_value())
