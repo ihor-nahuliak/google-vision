@@ -4,6 +4,7 @@ from google.cloud.vision import types, client
 from oauth2client.client import GoogleCredentials
 import json
 from processjson import Processor
+import os
 
 def detect_face(url, max_results=4):
     """Uses the Vision API to detect faces in the given file.
@@ -32,12 +33,13 @@ f = open('test.txt', 'w')
 f.write(s_face)
 f.close()
 
-
-# p = Processor()
-# print(p.get_joy_value())
-# print(p.get_sorrow_value())
-# print(p.get_anger_value())
-# print(p.get_surprise_value())
-# print(p.get_underexposed_value())
-# print(p.get_blurred_value())
-# print(p.get_headwear_value())
+if os.path.isfile('test.txt'):
+    file = open('test.txt')
+    p = Processor(file)
+    print(p.get_joy_value())
+    print(p.get_sorrow_value())
+    print(p.get_anger_value())
+    print(p.get_surprise_value())
+    print(p.get_underexposed_value())
+    print(p.get_blurred_value())
+    print(p.get_headwear_value())

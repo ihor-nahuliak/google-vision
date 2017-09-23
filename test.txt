@@ -1,0 +1,317 @@
+[bounding_poly {
+  vertices {
+    x: 83
+  }
+  vertices {
+    x: 499
+  }
+  vertices {
+    x: 499
+    y: 325
+  }
+  vertices {
+    x: 83
+    y: 325
+  }
+}
+fd_bounding_poly {
+  vertices {
+    x: 132
+  }
+  vertices {
+    x: 470
+  }
+  vertices {
+    x: 470
+    y: 305
+  }
+  vertices {
+    x: 132
+    y: 305
+  }
+}
+landmarks {
+  type: LEFT_EYE
+  position {
+    x: 215.609619140625
+    y: 88.37663269042969
+    z: -0.002080620266497135
+  }
+}
+landmarks {
+  type: RIGHT_EYE
+  position {
+    x: 339.9686279296875
+    y: 56.123802185058594
+    z: -22.545272827148438
+  }
+}
+landmarks {
+  type: LEFT_OF_LEFT_EYEBROW
+  position {
+    x: 161.21469116210938
+    y: 67.70387268066406
+    z: 14.668700218200684
+  }
+}
+landmarks {
+  type: RIGHT_OF_LEFT_EYEBROW
+  position {
+    x: 233.70394897460938
+    y: 58.43101119995117
+    z: -36.653221130371094
+  }
+}
+landmarks {
+  type: LEFT_OF_RIGHT_EYEBROW
+  position {
+    x: 296.7622985839844
+    y: 41.783958435058594
+    z: -47.94028091430664
+  }
+}
+landmarks {
+  type: RIGHT_OF_RIGHT_EYEBROW
+  position {
+    x: 377.2796325683594
+    y: 14.382720947265625
+    z: -23.832918167114258
+  }
+}
+landmarks {
+  type: MIDPOINT_BETWEEN_EYES
+  position {
+    x: 270.7625732421875
+    y: 74.77267456054688
+    z: -39.549808502197266
+  }
+}
+landmarks {
+  type: NOSE_TIP
+  position {
+    x: 286.8086242675781
+    y: 156.36619567871094
+    z: -63.497230529785156
+  }
+}
+landmarks {
+  type: UPPER_LIP
+  position {
+    x: 302.4072570800781
+    y: 193.67970275878906
+    z: -24.646488189697266
+  }
+}
+landmarks {
+  type: LOWER_LIP
+  position {
+    x: 321.63433837890625
+    y: 248.01589965820312
+    z: -3.8605387210845947
+  }
+}
+landmarks {
+  type: MOUTH_LEFT
+  position {
+    x: 247.541015625
+    y: 215.80809020996094
+    z: 28.111827850341797
+  }
+}
+landmarks {
+  type: MOUTH_RIGHT
+  position {
+    x: 379.9581298828125
+    y: 180.58935546875
+    z: 8.890901565551758
+  }
+}
+landmarks {
+  type: MOUTH_CENTER
+  position {
+    x: 310.7863464355469
+    y: 217.40040588378906
+    z: -9.949265480041504
+  }
+}
+landmarks {
+  type: NOSE_BOTTOM_RIGHT
+  position {
+    x: 331.4187927246094
+    y: 147.0399627685547
+    z: -17.56525421142578
+  }
+}
+landmarks {
+  type: NOSE_BOTTOM_LEFT
+  position {
+    x: 257.12445068359375
+    y: 166.99676513671875
+    z: -3.5822339057922363
+  }
+}
+landmarks {
+  type: NOSE_BOTTOM_CENTER
+  position {
+    x: 297.1019592285156
+    y: 172.31275939941406
+    z: -29.442182540893555
+  }
+}
+landmarks {
+  type: LEFT_EYE_TOP_BOUNDARY
+  position {
+    x: 208.17343139648438
+    y: 83.03071594238281
+    z: -10.067581176757812
+  }
+}
+landmarks {
+  type: LEFT_EYE_RIGHT_CORNER
+  position {
+    x: 242.50567626953125
+    y: 87.10090637207031
+    z: -3.495450735092163
+  }
+}
+landmarks {
+  type: LEFT_EYE_BOTTOM_BOUNDARY
+  position {
+    x: 215.98519897460938
+    y: 98.2165756225586
+    z: 0.8772541284561157
+  }
+}
+landmarks {
+  type: LEFT_EYE_LEFT_CORNER
+  position {
+    x: 187.32608032226562
+    y: 94.61174011230469
+    z: 17.3712100982666
+  }
+}
+landmarks {
+  type: LEFT_EYE_PUPIL
+  position {
+    x: 209.1070556640625
+    y: 91.34054565429688
+    z: -2.5893115997314453
+  }
+}
+landmarks {
+  type: RIGHT_EYE_TOP_BOUNDARY
+  position {
+    x: 337.3070983886719
+    y: 51.16560363769531
+    z: -33.04506301879883
+  }
+}
+landmarks {
+  type: RIGHT_EYE_RIGHT_CORNER
+  position {
+    x: 368.1470031738281
+    y: 49.59454345703125
+    z: -14.935847282409668
+  }
+}
+landmarks {
+  type: RIGHT_EYE_BOTTOM_BOUNDARY
+  position {
+    x: 343.08026123046875
+    y: 66.63778686523438
+    z: -21.94912338256836
+  }
+}
+landmarks {
+  type: RIGHT_EYE_LEFT_CORNER
+  position {
+    x: 312.935791015625
+    y: 69.267578125
+    z: -16.80573272705078
+  }
+}
+landmarks {
+  type: RIGHT_EYE_PUPIL
+  position {
+    x: 341.7827453613281
+    y: 58.64488220214844
+    z: -26.397899627685547
+  }
+}
+landmarks {
+  type: LEFT_EYEBROW_UPPER_MIDPOINT
+  position {
+    x: 191.20547485351562
+    y: 48.747100830078125
+    z: -23.03166961669922
+  }
+}
+landmarks {
+  type: RIGHT_EYEBROW_UPPER_MIDPOINT
+  position {
+    x: 331.4732971191406
+    y: 14.11444091796875
+    z: -48.00270462036133
+  }
+}
+landmarks {
+  type: LEFT_EAR_TRAGION
+  position {
+    x: 166.7652587890625
+    y: 135.93765258789062
+    z: 189.15185546875
+  }
+}
+landmarks {
+  type: RIGHT_EAR_TRAGION
+  position {
+    x: 460.2962951660156
+    y: 63.425628662109375
+    z: 136.7596435546875
+  }
+}
+landmarks {
+  type: FOREHEAD_GLABELLA
+  position {
+    x: 263.3278503417969
+    y: 48.625213623046875
+    z: -47.9512825012207
+  }
+}
+landmarks {
+  type: CHIN_GNATHION
+  position {
+    x: 336.4684753417969
+    y: 293.3509216308594
+    z: 23.516578674316406
+  }
+}
+landmarks {
+  type: CHIN_LEFT_GONION
+  position {
+    x: 197.55453491210938
+    y: 226.4857940673828
+    z: 149.09030151367188
+  }
+}
+landmarks {
+  type: CHIN_RIGHT_GONION
+  position {
+    x: 462.75408935546875
+    y: 160.9749298095703
+    z: 101.8850326538086
+  }
+}
+roll_angle: -15.703575134277344
+pan_angle: -9.965298652648926
+tilt_angle: -10.491500854492188
+detection_confidence: 0.9973776340484619
+landmarking_confidence: 0.7750744819641113
+joy_likelihood: VERY_LIKELY
+sorrow_likelihood: VERY_UNLIKELY
+anger_likelihood: VERY_UNLIKELY
+surprise_likelihood: VERY_UNLIKELY
+under_exposed_likelihood: VERY_UNLIKELY
+blurred_likelihood: VERY_UNLIKELY
+headwear_likelihood: VERY_UNLIKELY
+]
