@@ -1,5 +1,3 @@
-import json
-
 # Features:
 #   joy_likelihood
 #   sorrow_likelihood
