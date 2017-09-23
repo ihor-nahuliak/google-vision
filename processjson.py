@@ -61,13 +61,13 @@ class Processor:
                 return score_dict[line.split(':')[1].strip()]
 
 
-f = open('test.json', 'r')
-p = Processor(f)
-
-print(p.get_joy_value())
-print(p.get_sorrow_value())
-print(p.get_anger_value())
-print(p.get_surprise_value())
-print(p.get_underexposed_value())
-print(p.get_blurred_value())
-print(p.get_headwear_value())
+# f = open('test.json', 'r')
+# p = Processor(f)
+#
+# print(p.get_joy_value())
+# print(p.get_sorrow_value())
+# print(p.get_anger_value())
+# print(p.get_surprise_value())
+# print(p.get_underexposed_value())
+# print(p.get_blurred_value())
+# print(p.get_headwear_value())
