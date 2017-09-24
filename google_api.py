@@ -57,4 +57,4 @@ class Vision:
                 mood_set.add((blur, blur_score))
                 mood_set.add((hat, hat_score))
                 sorted_set = sorted(mood_set, key=lambda tup: tup[1], reverse=True)
-                print(sorted_set)
+                return sorted_set[0]

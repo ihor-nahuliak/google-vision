@@ -26,7 +26,7 @@ class Processor:
     def get_joy_value(self):
         for line in self.file:
             if 'joy_likelihood' in line:
-                return 'joy', score_dict[line.split(':')[1].strip()]
+                return 'joyful', score_dict[line.split(':')[1].strip()]
 
     def get_sorrow_value(self):
         for line in self.file:
@@ -36,17 +36,17 @@ class Processor:
     def get_anger_value(self):
         for line in self.file:
             if 'anger_likelihood' in line:
-                return 'anger', score_dict[line.split(':')[1].strip()]
+                return 'angry', score_dict[line.split(':')[1].strip()]
 
     def get_surprise_value(self):
         for line in self.file:
             if 'surprise_likelihood' in line:
-                return 'surprise', score_dict[line.split(':')[1].strip()]
+                return 'surprised', score_dict[line.split(':')[1].strip()]
 
     def get_underexposed_value(self):
         for line in self.file:
             if 'under_exposed_likelihood' in line:
-                return 'under_ex', score_dict[line.split(':')[1].strip()]
+                return 'under_exposed', score_dict[line.split(':')[1].strip()]
 
     def get_blurred_value(self):
         for line in self.file:
@@ -56,7 +56,7 @@ class Processor:
     def get_headwear_value(self):
         for line in self.file:
             if 'headwear_likelihood' in line:
-                return 'hat', score_dict[line.split(':')[1].strip()]
+                return 'look outstanding in a hat', score_dict[line.split(':')[1].strip()]
 
 
 # f = open('test.json', 'r')
