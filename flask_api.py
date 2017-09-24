@@ -3,7 +3,7 @@ from google_api import Vision
 from pubnub.pnconfiguration import PNConfiguration
 from pubnub.pubnub import PubNub
 import os
-
+from PIL import Image, ImageDraw
 def publish_callback(result, status):
     print(result, status)
     # Handle PNPublishResult and PNStatus
@@ -29,8 +29,7 @@ def process_image():
     pubnub = PubNub(pnconfig)
 
     data = {}
-    data["result-url"] = "http://{0}:5000/image/{1}".format(request.remote_addr, filename)
-
+    data["filename"] = filename
     if mood == 'joyful':
         data["box-id"] = 1
         data["mood"] = mood
@@ -46,6 +45,10 @@ def process_image():
     elif mood == 'outstanding in a hat':
         data["box-id"] = 5
         data["mood"] = mood
+    elif mood == "under_exposed":
+        data["box-id"] = 6
+        data["mood"] = mood
+
 
 
     pubnub.publish().channel("parcelbox").message(data).sync()
@@ -53,5 +56,15 @@ def process_image():
 @app.route('/image/<filename>')
 def get_image(filename):
     path = os.getcwd() + '/temp/{0}'.format(filename)
-    return send_file(path, mimetype='image/jpg')
+
+    image = Image.open(path)
+    draw = ImageDraw.Draw(image)
+    x = 200
+    y = 300
+    r = 50
+    draw.ellipse((x - r, y - r, x + r, y + r), fill=(255, 0, 0, 255))
+    image.save('out.jpg')
+
+
+    return send_file('out.jpg', mimetype='image/jpg')
 

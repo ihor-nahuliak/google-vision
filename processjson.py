@@ -59,8 +59,9 @@ class Processor:
                 return 'outstanding in a hat', score_dict[line.split(':')[1].strip()]
 
 
-# f = open('test.json', 'r')
+# f = open('test.txt', 'r')
 # p = Processor(f)
+# p.get_lefteye_position()
 #
 # print(p.get_joy_value())
 # print(p.get_sorrow_value())
