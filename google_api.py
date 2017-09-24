@@ -1,8 +1,5 @@
-from PIL import Image, ImageDraw
 from google.cloud import vision
 from google.cloud.vision import types, client
-from oauth2client.client import GoogleCredentials
-import json
 from processjson import Processor
 import os
 
