@@ -10,6 +10,48 @@ def publish_callback(result, status):
 
 app = Flask(__name__)
 
+def clearLine(line, title):
+    line = line.replace(title, "")
+    line = line.replace(" ", "")
+    line = line.replace(":", "")
+    line = line.replace("\n", "")
+    line = line.replace("{", "")
+    line = line.replace("}", "")
+    return line
+
+def parseLandmarks(path):
+    f = open(path, 'r+')
+
+    nextLandmark = ""
+    foundLandmark = 0
+    foundLandmarkX = ""
+    foundLandmarkY = ""
+
+    landmarks = {}
+
+    for line in f:
+
+        if "landmarks" in line:
+            foundLandmark = 1
+
+        elif foundLandmark == 1:
+            nextLandmark = clearLine(line, "type")
+            foundLandmark = 2
+
+        elif foundLandmark == 2:
+            foundLandmark = 3
+
+        elif foundLandmark == 3:
+            foundLandmarkX = clearLine(line, "x")
+            foundLandmark = 4
+
+        elif foundLandmark == 4:
+            foundLandmarkY = clearLine(line, "y")
+            landmarks[nextLandmark] = (foundLandmarkX, foundLandmarkY)
+            foundLandmark = 0
+
+    return landmarks
+
 @app.route('/', methods=['POST'])
 def process_image():
     file = request.files['pic']
@@ -57,14 +99,28 @@ def process_image():
 def get_image(filename):
     path = os.getcwd() + '/temp/{0}'.format(filename)
 
+    googleResultPath = os.getcwd() + '/test.txt'
+    landmarks = parseLandmarks(googleResultPath)
+
+    print(landmarks)
+
     image = Image.open(path)
     draw = ImageDraw.Draw(image)
-    x = 200
-    y = 300
-    r = 50
+
+    (x, y, r) = (landmarks["LEFT_EYE"][0], landmarks["LEFT_EYE"][1], 30)
     draw.ellipse((x - r, y - r, x + r, y + r), fill=(255, 0, 0, 255))
-    image.save('out.jpg')
 
+    (x, y, r) = (landmarks["RIGHT_EYE"][0], landmarks["RIGHT_EYE"][1], 30)
+    draw.ellipse((x - r, y - r, x + r, y + r), fill=(255, 0, 0, 255))
 
-    return send_file('out.jpg', mimetype='image/jpg')
+    (x1, x2, y1, y2, w) = (landmarks["LEFT_OF_LEFT_EYEBROW"][0], landmarks["LEFT_OF_LEFT_EYEBROW"][1], landmarks["RIGHT_OF_LEFT_EYEBROW"][0], landmarks["RIGHT_OF_LEFT_EYEBROW"][1], 20)
+    draw.line((100,200, 150, 300), fill=128, width=w)
+
+    (x1, x2, y1, y2, w) = (landmarks["LEFT_OF_RIGHT_EYEBROW"][0], landmarks["LEFT_OF_RIGHT_EYEBROW"][1], landmarks["RIGHT_OF_RIGHT_EYEBROW"][0], landmarks["RIGHT_OF_RIGHT_EYEBROW"][1], 20)
+    draw.line((100,200, 150, 300), fill=128, width=w)
+
+    newFile = '%s-out.jpg' % filename
+    image.save(newFile)
+
+    return send_file(newFile, mimetype='image/jpg')
 
