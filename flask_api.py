@@ -47,7 +47,7 @@ def parseLandmarks(path):
 
         elif foundLandmark == 4:
             foundLandmarkY = clearLine(line, "y")
-            landmarks[nextLandmark] = (foundLandmarkX, foundLandmarkY)
+            landmarks[nextLandmark] = (float(foundLandmarkX), float(foundLandmarkY))
             foundLandmark = 0
 
     return landmarks
@@ -107,19 +107,11 @@ def get_image(filename):
     image = Image.open(path)
     draw = ImageDraw.Draw(image)
 
-    (x, y, r) = (landmarks["LEFT_EYE"][0], landmarks["LEFT_EYE"][1], 30)
-    draw.ellipse((x - r, y - r, x + r, y + r), fill=(255, 0, 0, 255))
+    for key in landmarks.keys():
+        (x, y, r) = (landmarks[key][0], landmarks[key][1], 5)
+        draw.ellipse((x - r, y - r, x + r, y + r), fill=(255, 0, 0, 255))
 
-    (x, y, r) = (landmarks["RIGHT_EYE"][0], landmarks["RIGHT_EYE"][1], 30)
-    draw.ellipse((x - r, y - r, x + r, y + r), fill=(255, 0, 0, 255))
-
-    (x1, x2, y1, y2, w) = (landmarks["LEFT_OF_LEFT_EYEBROW"][0], landmarks["LEFT_OF_LEFT_EYEBROW"][1], landmarks["RIGHT_OF_LEFT_EYEBROW"][0], landmarks["RIGHT_OF_LEFT_EYEBROW"][1], 20)
-    draw.line((100,200, 150, 300), fill=128, width=w)
-
-    (x1, x2, y1, y2, w) = (landmarks["LEFT_OF_RIGHT_EYEBROW"][0], landmarks["LEFT_OF_RIGHT_EYEBROW"][1], landmarks["RIGHT_OF_RIGHT_EYEBROW"][0], landmarks["RIGHT_OF_RIGHT_EYEBROW"][1], 20)
-    draw.line((100,200, 150, 300), fill=128, width=w)
-
-    newFile = '%s-out.jpg' % filename
+    newFile = os.getcwd() + '/temp/out-{0}'.format(filename)
     image.save(newFile)
 
     return send_file(newFile, mimetype='image/jpg')
