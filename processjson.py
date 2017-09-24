@@ -56,7 +56,7 @@ class Processor:
     def get_headwear_value(self):
         for line in self.file:
             if 'headwear_likelihood' in line:
-                return 'look outstanding in a hat', score_dict[line.split(':')[1].strip()]
+                return 'outstanding in a hat', score_dict[line.split(':')[1].strip()]
 
 
 # f = open('test.json', 'r')

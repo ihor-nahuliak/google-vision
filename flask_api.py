@@ -27,8 +27,27 @@ def process_image():
         pnconfig.ssl = False
         pubnub = PubNub(pnconfig)
         data = {}
-        data["box-id"] = 1
-        data["mood"] = mood
-        data["result-url"] = "satrst"
+        if mood == 'joyful':
+            data["box-id"] = 1
+            data["mood"] = mood
+            data["result-url"] = "satrst"
+        elif mood == 'angry':
+            data["box-id"] = 2
+            data["mood"] = mood
+            data["result-url"] = "satrst"
+        elif mood == 'blurred':
+            data["box-id"] = 3
+            data["mood"] = mood
+            data["result-url"] = "satrst"
+        elif mood == 'sorrow':
+            data["box-id"] = 4
+            data["mood"] = mood
+            data["result-url"] = "satrst"
+        elif mood == 'outstanding in a hat':
+            data["box-id"] = 5
+            data["mood"] = mood
+            data["result-url"] = "satrst"
+
+
         pubnub.publish().channel("parcelbox").message(data).sync()
 
